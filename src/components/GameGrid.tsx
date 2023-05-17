@@ -6,7 +6,7 @@ import IsLoading from "./IsLoading";
 
 const GameGrid = () => {
   const { data, error, isLoading } = useGames();
-  const sekeletons = [1, 2, 3, 4, 5, 6];
+  const skeletons = [1, 2, 3, 4, 5, 6];
   return (
     <>
       {error && <Text>{error}</Text>}
@@ -16,9 +16,9 @@ const GameGrid = () => {
         spacing={10}
       >
         {isLoading &&
-          sekeletons.map((sekeleton) => (
+          skeletons.map((skeleton) => (
             <GameCardContainer>
-              <IsLoading key={sekeleton} />
+              <IsLoading key={skeleton} />
             </GameCardContainer>
           ))}
         {data.map((game) => (

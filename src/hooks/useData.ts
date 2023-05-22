@@ -1,4 +1,4 @@
-import { AxiosRequestConfig } from "axios";
+import { AxiosRequestConfig, CanceledError } from "axios";
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 
@@ -30,12 +30,12 @@ const useData = <T>(
           setLoading(false);
         })
         .catch((err) => {
-          if (err instanceof CancelError) return;
+          if (err instanceof CanceledError) return;
           setError(err.message);
           setLoading(false);
         });
 
-      return () => controller.abort;
+      return () => controller.abort();
     },
     deps ? [...deps] : []
   );

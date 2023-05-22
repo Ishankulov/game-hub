@@ -26,9 +26,9 @@ const PlatformIconsList = ({ platforms }: Props) => {
     mac: FaApple,
   };
   return (
-    <HStack marginY = {2}>
+    <HStack marginY={2}>
       {platforms.map((platform) => (
-        <Icon key={platform.id} as={iconMap[platform.slug]} color='gray.500'/>
+        <Icon key={platform.id} as={iconMap[platform.slug]} color="gray.500" />
       ))}
     </HStack>
   );
